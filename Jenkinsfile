@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+        // make build
         stage('Build') {
             steps {
                 echo "Fetching the source code from GitHub"
