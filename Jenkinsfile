@@ -8,6 +8,7 @@ pipeline {
                 echo "Compiling the code and generating artifacts."
             }
         }
+        // test starts
         stage('Unit and Integration Tests') {
             steps {
                 echo "Running unit tests: started"
