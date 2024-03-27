@@ -2,6 +2,7 @@ pipeline {
     agent any
     stages {
         // make build
+        //maven is used
         stage('Build') {
             steps {
                 echo "Fetching the source code from GitHub"
@@ -9,6 +10,7 @@ pipeline {
             }
         }
         // test starts
+        //Selenium is used
         stage('Unit and Integration Tests') {
             steps {
                 echo "Running unit tests: started"
@@ -27,11 +29,14 @@ pipeline {
                 }
             }
         }
+        //SONARQUBE is used
         stage('Code Analysis') {
             steps {
                 echo "Running code analysis: started"
             }
         }
+
+        //OWASP is used
         stage('Security Scan') {
             steps {
                 echo "Running security scan: started"
@@ -49,11 +54,15 @@ pipeline {
                 }
             }
         }
+        
+        //AWS is used
         stage('Deploy to Staging') {
             steps {
                 echo "Deploying to Staging: started"
             }
         }
+        
+        //AWS is used
         stage('Integration Tests on Staging') {
             steps {
                 echo "Running integration tests on Staging: started"
@@ -71,6 +80,8 @@ pipeline {
                 }
             }
         }
+
+        //AWS is used
         stage('Deploy to Production') {
             steps {
                 echo "Deploying to Production: started"
